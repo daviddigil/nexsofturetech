@@ -5,7 +5,7 @@
   "description": "Nexsofture Tech — brand website (nexsofture.tech)",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/postbuild.mjs",
+    "build": "next build --webpack && node scripts/postbuild.mjs",
     "start": "serve out -l 4173"
   },
   "dependencies": {
