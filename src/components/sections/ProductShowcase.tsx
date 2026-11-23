@@ -39,7 +39,7 @@ export function ProductShowcase({ locale, t }: { locale: Locale; t: Dict["produc
                   </ul>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <Link href={`/${locale}/products/${p.slug}/`} className="btn-navy">
-                      {t.learnMore} <ArrowRight className="flip-rtl h-4 w-4" aria-hidden />
+                      {t.learnMore}<span className="sr-only"> — {p.name}</span> <ArrowRight className="flip-rtl h-4 w-4" aria-hidden />
                     </Link>
                     {p.url && (
                       <a href={p.url} target="_blank" rel="noopener" className="btn-ghost text-navy">

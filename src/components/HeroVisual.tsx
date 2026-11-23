@@ -17,7 +17,11 @@ export function HeroVisual() {
       const c = document.createElement("canvas");
       webgl = !!(c.getContext("webgl2") || c.getContext("webgl"));
     } catch {}
-    if (reduce || !webgl) return;
+    // Phones/tablets and low-power devices keep the lightweight SVG: three.js costs ~1 s of main-thread time on mobile.
+    const desktop = window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches;
+    const nav = navigator as Navigator & { deviceMemory?: number };
+    const capable = (nav.hardwareConcurrency ?? 4) >= 4 && (nav.deviceMemory ?? 8) >= 4;
+    if (reduce || !webgl || !desktop || !capable) return;
     // Defer until the browser is idle so the 3D never blocks first paint (LCP).
     const ric = (window as unknown as { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback;
     const start = () => {

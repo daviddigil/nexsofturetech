@@ -9,7 +9,8 @@ import { href } from "@/lib/i18n";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // Real content date (not "now" on every build) so crawlers trust <lastmod>. Update when content changes.
+  const now = new Date("2026-11-23");
   const paths: { p: string; priority: number; freq: "weekly" | "monthly" | "yearly"; date?: Date }[] = [
     { p: "/", priority: 1, freq: "weekly" },
     { p: "/automate-uae", priority: 0.95, freq: "weekly" },

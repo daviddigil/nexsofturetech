@@ -92,9 +92,7 @@ export function Footer({ locale, t, nav }: { locale: Locale; t: Dict["footer"]; 
       </div>
 
       <div className="container-x relative overflow-hidden">
-        <p aria-hidden className="select-none whitespace-nowrap text-center font-display text-[17vw] font-extrabold leading-none tracking-tighter text-white/[0.04] md:text-[12.5rem]" style={{ fontFamily: "var(--font-saira)" }} dir="ltr">
-          NEXSOFTURE
-        </p>
+        <div aria-hidden data-t="NEXSOFTURE" className="select-none whitespace-nowrap text-center font-display text-[17vw] font-extrabold leading-none tracking-tighter before:text-white/[0.04] before:content-[attr(data-t)] md:text-[12.5rem]" style={{ fontFamily: "var(--font-saira)", direction: "ltr" }} />
       </div>
 
       <div className="border-t border-white/10">

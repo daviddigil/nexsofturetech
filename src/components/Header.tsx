@@ -47,16 +47,16 @@ export function Header({ locale, t }: { locale: Locale; t: Dict["nav"] }) {
         }`}
       >
         <nav className="container-x flex h-16 items-center justify-between" aria-label="Main">
-          <Link href={`${base}/`} aria-label="Nexsofture Tech, home" className="shrink-0">
+          <Link href={`${base}/`} className="shrink-0">
             <Logo dark={onDark} />
           </Link>
 
-          <ul className="hidden items-center gap-1 lg:flex">
+          <ul className="hidden items-center lg:flex xl:gap-1">
             {links.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rounded-full px-3.5 py-2 text-[0.9rem] font-medium transition-colors ${
+                  className={`whitespace-nowrap rounded-full px-3.5 py-2 text-[0.9rem] font-medium transition-colors ${
                     onDark
                       ? isActive(l.href) ? "bg-white/10 text-white" : "text-white/70 hover:text-white"
                       : isActive(l.href) ? "bg-navy/5 text-navy" : "text-navy/70 hover:text-navy"
@@ -74,7 +74,6 @@ export function Header({ locale, t }: { locale: Locale; t: Dict["nav"] }) {
               href={switchHref}
               hrefLang={other}
               lang={other}
-              aria-label={t.switchLangLabel}
               className={`hidden items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium sm:inline-flex ${onDark ? "text-white/70 hover:text-white" : "text-navy/70 hover:text-navy"}`}
             >
               <Languages className="h-4 w-4" aria-hidden />
