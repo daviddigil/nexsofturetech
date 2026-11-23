@@ -1,0 +1,62 @@
+# ───────── Nexsofture Tech · Hostinger (Apache / LiteSpeed) ─────────
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Force non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # Root → language (Arabic browsers → /ar/, everyone else → /en/)
+  RewriteCond %{HTTP:Accept-Language} ^ar [NC]
+  RewriteRule ^$ /ar/ [L,R=302]
+  RewriteRule ^$ /en/ [L,R=302]
+
+  # Add trailing slash to directory-style URLs (e.g. /en/about → /en/about/)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.*)$ /$1/ [L,R=301]
+</IfModule>
+
+ErrorDocument 404 /en/404/index.html
+
+# Correct content types
+AddType text/plain .txt
+AddType application/manifest+json .webmanifest
+AddType image/svg+xml .svg
+AddDefaultCharset utf-8
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+
+# Caching: hashed Next.js assets forever, HTML always fresh
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2|woff|ttf|svg|png|jpg|jpeg|webp|avif|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html|txt|xml|webmanifest)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Security headers
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Protect hidden / config files
+<FilesMatch "^\.|\.(ini|log|sh|env)$">
+  Require all denied
+</FilesMatch>
