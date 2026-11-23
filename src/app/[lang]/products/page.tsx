@@ -10,11 +10,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { ProductVisual } from "@/components/ProductVisual";
 import { Reveal } from "@/components/Reveal";
+import { SoonBadge } from "@/components/SoonBadge";
 import { CtaBand } from "@/components/sections/CtaBand";
 
 const copy = {
-  en: { title: "AI products built for UAE businesses", lead: "Nexsofture Tech builds and operates its own SaaS platforms: ChatCart Pro (AI chat, AI voice agent and Quick Store), ChatCart CRM, Quick Print UAE, Blackboard AI and TapyTips." },
-  ar: { title: "منتجات ذكاء اصطناعي مصممة لشركات الإمارات", lead: "تبني نكسوفتشر تك وتشغّل منصاتها الخاصة: تشات كارت برو (محادثة ذكية، وكيل صوتي، متجر سريع)، وتشات كارت CRM، وكويك برنت الإمارات، وبلاك بورد AI، وتابي تيبس." },
+  en: { title: "AI products built for UAE businesses", lead: "Nexsofture Tech builds and operates its own SaaS platforms: ChatCart Pro (AI chat, AI voice agent and Quick Store), ChatCart CRM, Quick Print UAE, Blackboard AI, TapyTips and Chatree (launching soon)." },
+  ar: { title: "منتجات ذكاء اصطناعي مصممة لشركات الإمارات", lead: "تبني نكسوفتشر تك وتشغّل منصاتها الخاصة: تشات كارت برو (محادثة ذكية، وكيل صوتي، متجر سريع)، وتشات كارت CRM، وكويك برنت الإمارات، وبلاك بورد AI، وتابي تيبس، وتشات تري (قريباً)." },
 };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/products">): Promise<Metadata> {
@@ -48,7 +49,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
               <Link href={href(lang, `/products/${p.slug}`)} className="card card-hover group flex h-full flex-col ring-1 ring-navy/5">
                 <ProductVisual kind={p.visual} className="h-64" />
                 <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-royal">{p.category[lang]}</p>
-                <h2 className="mt-2 font-display text-3xl font-bold text-navy"><bdi>{p.name}</bdi></h2>
+                <h2 className="mt-2 flex flex-wrap items-center gap-3 font-display text-3xl font-bold text-navy"><bdi>{p.name}</bdi>{p.status === "soon" && <SoonBadge label={d.productsSection.soon} />}</h2>
                 <p className="mt-2 flex-1 text-slate">{p.tagline[lang]}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-royal">
                   {d.productsSection.learnMore} <ArrowRight className="flip-rtl h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />

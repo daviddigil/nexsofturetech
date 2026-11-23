@@ -4,6 +4,7 @@ import { products } from "@/content/products";
 import { ProductVisual } from "../ProductVisual";
 import { SectionHead } from "./SectionHead";
 import { Reveal } from "../Reveal";
+import { SoonBadge } from "../SoonBadge";
 import type { Locale } from "@/config/site";
 import type { Dict } from "@/content/ui";
 
@@ -25,8 +26,9 @@ export function ProductShowcase({ locale, t }: { locale: Locale; t: Dict["produc
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-royal">
                     {String(i + 1).padStart(2, "0")} · {p.category[locale]}
                   </p>
-                  <h3 className="h-display mt-3 text-4xl text-navy sm:text-5xl">
+                  <h3 className="h-display mt-3 flex flex-wrap items-center gap-3 text-4xl text-navy sm:text-5xl">
                     <bdi>{p.name}</bdi>
+                    {p.status === "soon" && <SoonBadge label={t.soon} />}
                   </h3>
                   <p className="mt-3 text-xl font-medium text-navy/90">{p.tagline[locale]}</p>
                   <p className="mt-4 leading-relaxed text-slate">{p.summary[locale]}</p>

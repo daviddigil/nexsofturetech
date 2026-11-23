@@ -121,6 +121,34 @@ const visuals: Record<ProductVisualKind, React.ReactNode> = {
       </div>
     </div>
   ),
+  link: (
+    <div className="flex h-full items-center justify-center gap-5">
+      <div className="w-44 rounded-[2rem] bg-white p-3 text-navy shadow-2xl ring-4 ring-white/20">
+        <div className="mx-auto mt-1 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-volt to-electric text-xl">🌳</div>
+        <div className="mt-2 text-center text-xs font-bold">@yourname</div>
+        <div className="text-center text-[9px] text-slate">Creator · Dubai</div>
+        <div className="mt-3 space-y-1.5">
+          {["My latest video", "Shop my products", "Send a tip ☕", "Book a call"].map((l, i) => (
+            <div key={l} className={`rounded-full py-1.5 text-center text-[10px] font-semibold ${i === 0 ? "bg-navy text-white" : "bg-cloud text-navy"}`}>{l}</div>
+          ))}
+        </div>
+        <div className="mt-3 flex justify-center gap-1.5">
+          {["bg-royal", "bg-electric", "bg-volt", "bg-navy"].map((c) => (
+            <span key={c} className={`h-4 w-4 rounded-full ${c}`} />
+          ))}
+        </div>
+      </div>
+      <div className="glass hidden w-36 rounded-3xl p-4 sm:block">
+        <div className="text-[10px] uppercase tracking-widest text-white/60">QR studio</div>
+        <div className="mt-2 grid grid-cols-6 gap-[2px] rounded-xl bg-white p-2">
+          {Array.from({ length: 36 }).map((_, i) => (
+            <span key={i} className={`aspect-square rounded-[2px] ${[0, 1, 2, 5, 6, 8, 11, 12, 14, 17, 18, 21, 23, 24, 27, 29, 30, 32, 33, 35].includes(i) ? "bg-navy" : "bg-transparent"}`} />
+          ))}
+        </div>
+        <div className="mt-2 text-center text-[10px] text-white/70">15 QR types</div>
+      </div>
+    </div>
+  ),
   tips: (
     <div className="flex h-full items-center justify-center gap-6">
       <div className="rounded-3xl bg-white p-4 shadow-2xl">

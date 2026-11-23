@@ -1,6 +1,6 @@
 import type { L } from "@/lib/i18n";
 
-export type ProductVisualKind = "chat" | "print" | "crm" | "board" | "tips";
+export type ProductVisualKind = "chat" | "print" | "crm" | "board" | "tips" | "link";
 
 export type Product = {
   slug: string;
@@ -18,6 +18,8 @@ export type Product = {
   audience: L[];
   faq: { q: L; a: L }[];
   keywords: string[];
+  /** "soon" = announced, not launched yet: shown with a "Launching soon" badge and a waitlist CTA. */
+  status?: "soon";
 };
 
 export const products: Product[] = [
@@ -208,6 +210,47 @@ export const products: Product[] = [
       { q: { en: "How do staff receive tips?", ar: "كيف يستلم الموظفون الإكراميات؟" }, a: { en: "Tips are tracked per staff member or team and paid out transparently according to your venue's policy.", ar: "تُتتبع الإكراميات لكل موظف أو فريق وتُصرف بشفافية وفق سياسة منشأتك." } },
     ],
     keywords: ["digital tipping UAE", "cashless tips Dubai", "QR tipping restaurant", "tipping app UAE"],
+  },
+  {
+    slug: "chatree",
+    name: "Chatree",
+    url: "",
+    status: "soon",
+    category: { en: "Link-in-bio · QR Studio · Creator Payments", ar: "رابط واحد للتعريف · استوديو QR · مدفوعات المبدعين" },
+    appCategory: "BusinessApplication",
+    accent: "#CCFF00",
+    visual: "link",
+    tagline: {
+      en: "One link for everything you do. Grow it, share it, get paid.",
+      ar: "رابط واحد لكل ما تقدّمه. نمِّه وشاركه واحصل على أجرك.",
+    },
+    summary: {
+      en: "Chatree is a link-in-bio page builder with a built-in QR code studio and creator payments. Creators and small businesses build one mobile-friendly page with links, a tip jar, products, a lead form and FAQs, then track views and clicks. Chatree is launching soon.",
+      ar: "تشات تري منصة لبناء صفحة الرابط الواحد (Link-in-bio) مع استوديو رموز QR مدمج ومدفوعات للمبدعين. يبني المبدعون والشركات الصغيرة صفحة واحدة مناسبة للجوال تضم الروابط وصندوق الإكراميات والمنتجات ونموذج العملاء المحتملين والأسئلة الشائعة، ثم يتابعون المشاهدات والنقرات. تشات تري قادم قريباً.",
+    },
+    description: {
+      en: "Chatree gives every creator, shop and freelancer one beautiful link that does more. Add blocks for links, a tip jar, products, a lead form and FAQs; pick from 27 fonts and dozens of themes, including game and anime styles; and share it as a link or a QR code. The QR studio supports 15 QR types for links, WhatsApp, Wi-Fi, contacts and more. Payments are powered by Stripe, with creator payouts via Stripe Connect, and analytics show real views and link clicks. Chatree is in final testing and launching soon, so join the waitlist to get early access.",
+      ar: "يمنح تشات تري كل مبدع ومتجر ومستقل رابطاً واحداً أنيقاً يفعل أكثر. أضف كتل الروابط وصندوق الإكراميات والمنتجات ونموذج العملاء والأسئلة الشائعة، واختر من 27 خطاً وعشرات القوالب بما فيها أنماط الألعاب والأنمي، وشاركه كرابط أو كرمز QR. يدعم استوديو QR خمسة عشر نوعاً من الرموز للروابط وواتساب والواي فاي وجهات الاتصال وغيرها. تعمل المدفوعات عبر Stripe مع تحويل مستحقات المبدعين عبر Stripe Connect، وتعرض التحليلات المشاهدات والنقرات الفعلية. تشات تري في مرحلة الاختبار النهائي وسيُطلق قريباً، فانضم إلى قائمة الانتظار للحصول على وصول مبكر.",
+    },
+    features: [
+      { t: { en: "Page builder", ar: "منشئ الصفحات" }, d: { en: "Blocks for links, tip jar, products, lead form and FAQs, with photo and product image uploads.", ar: "كتل للروابط وصندوق الإكراميات والمنتجات ونموذج العملاء والأسئلة الشائعة، مع رفع الصور وصور المنتجات." } },
+      { t: { en: "QR code studio", ar: "استوديو رموز QR" }, d: { en: "15 QR types, from links and WhatsApp to Wi-Fi and contact cards.", ar: "15 نوعاً من الرموز، من الروابط وواتساب إلى الواي فاي وبطاقات الاتصال." } },
+      { t: { en: "Tips & product sales", ar: "الإكراميات ومبيعات المنتجات" }, d: { en: "Accept tips and sell products through Stripe Checkout, with payouts to creators via Stripe Connect.", ar: "استقبل الإكراميات وبِع المنتجات عبر Stripe Checkout مع تحويل المستحقات للمبدعين عبر Stripe Connect." } },
+      { t: { en: "27 fonts & dozens of themes", ar: "27 خطاً وعشرات القوالب" }, d: { en: "Make it yours, with game and anime-style themes and icons for 20+ social platforms.", ar: "اجعلها تعبّر عنك، مع قوالب الألعاب والأنمي وأيقونات أكثر من 20 منصة اجتماعية." } },
+      { t: { en: "Real analytics", ar: "تحليلات حقيقية" }, d: { en: "See views and link clicks, without counting your own visits.", ar: "شاهد المشاهدات والنقرات دون احتساب زياراتك أنت." } },
+      { t: { en: "Social & WhatsApp", ar: "التواصل الاجتماعي وواتساب" }, d: { en: "Connect YouTube, Instagram and TikTok for follower counts, and add a WhatsApp chat button.", ar: "اربط يوتيوب وإنستغرام وتيك توك لعرض أعداد المتابعين، وأضف زر محادثة واتساب." } },
+    ],
+    audience: [
+      { en: "Creators & influencers", ar: "المبدعون والمؤثرون" },
+      { en: "Small shops & home businesses", ar: "المتاجر الصغيرة والمشاريع المنزلية" },
+      { en: "Freelancers, coaches & restaurants (QR menus)", ar: "المستقلون والمدرّبون والمطاعم (قوائم QR)" },
+    ],
+    faq: [
+      { q: { en: "When does Chatree launch?", ar: "متى يُطلق تشات تري؟" }, a: { en: "Chatree is in final testing and launching soon. Contact us to join the waitlist and get early access.", ar: "تشات تري في مرحلة الاختبار النهائي وسيُطلق قريباً. تواصل معنا للانضمام إلى قائمة الانتظار والحصول على وصول مبكر." } },
+      { q: { en: "What is a link-in-bio page?", ar: "ما هي صفحة الرابط الواحد (Link-in-bio)؟" }, a: { en: "It is a single mobile-friendly page you link from your social profiles, collecting all your links, products, tips and contact options in one place.", ar: "هي صفحة واحدة مناسبة للجوال تضع رابطها في حساباتك الاجتماعية، وتجمع فيها كل روابطك ومنتجاتك وإكرامياتك وطرق التواصل." } },
+      { q: { en: "How do creators get paid?", ar: "كيف يستلم المبدعون أرباحهم؟" }, a: { en: "Payments run through Stripe, and creators receive payouts through Stripe Connect.", ar: "تتم المدفوعات عبر Stripe، ويستلم المبدعون مستحقاتهم عبر Stripe Connect." } },
+    ],
+    keywords: ["link in bio UAE", "QR code generator UAE", "creator payments UAE", "link in bio Arabic"],
   },
 ];
 

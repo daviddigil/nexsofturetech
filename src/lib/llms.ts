@@ -14,7 +14,7 @@ export function llmsTxt(full = false) {
   L.push(`# ${site.name}`);
   L.push("");
   L.push(
-    `> ${site.name} (نكسوفتشر تك) (legal name: ${site.legalName}) is a technology company in the United Arab Emirates, founded in ${site.foundingYear} by ${site.founder}, with an office in Dubai and a registered office in Ras Al Khaimah. It builds AI-powered SaaS products (ChatCart Pro, ChatCart CRM, Quick Print UAE, Blackboard AI, TapyTips) and provides website development, app development, digital marketing, UI/UX design, branding, graphic design and tech courses for businesses across the UAE and GCC. The website is available in English and Arabic.`
+    `> ${site.name} (نكسوفتشر تك) (legal name: ${site.legalName}) is a technology company in the United Arab Emirates, founded in ${site.foundingYear} by ${site.founder}, with an office in Dubai and a registered office in Ras Al Khaimah. It builds AI-powered SaaS products (ChatCart Pro, ChatCart CRM, Quick Print UAE, Blackboard AI, TapyTips, and Chatree, launching soon) and provides website development, app development, digital marketing, UI/UX design, branding, graphic design and tech courses for businesses across the UAE and GCC. The website is available in English and Arabic.`
   );
   L.push("");
   L.push(`- Website: ${site.url}`);

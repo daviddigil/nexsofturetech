@@ -29,10 +29,12 @@ const en = {
   productsSection: {
     eyebrow: "Our products",
     title: "Products that work while you sleep.",
-    lead: "Five SaaS platforms built in-house and battle-tested with UAE businesses: from AI agents that sell on WhatsApp to tipping that takes seconds.",
+    lead: "Six SaaS platforms built in-house for UAE businesses and creators: from AI agents that sell on WhatsApp to tipping that takes seconds.",
     viewAll: "View all products",
     learnMore: "Learn more",
     visit: "Visit site",
+    soon: "Launching soon",
+    waitlist: "Join the waitlist",
   },
   servicesSection: {
     eyebrow: "What we do",
@@ -41,7 +43,7 @@ const en = {
     viewAll: "All services",
   },
   stats: [
-    { value: 5, suffix: "", label: "SaaS products built in-house" },
+    { value: 6, suffix: "", label: "SaaS products built in-house" },
     { value: 7, suffix: "", label: "Core digital services" },
     { value: 24, suffix: "/7", label: "AI agents on duty" },
     { value: 2, suffix: "", label: "Languages, Arabic & English" },
@@ -60,7 +62,7 @@ const en = {
     eyebrow: "Why Nexsofture",
     title: "Product builders, not just a service agency.",
     items: [
-      { t: "We run our own SaaS", d: "We build and operate five products, so we design for real users, real scale and real revenue." },
+      { t: "We run our own SaaS", d: "We build our own six products, so we design for real users, real scale and real revenue." },
       { t: "AI at the core", d: "LLMs, voice AI and automation are part of every build, not bolted on at the end." },
       { t: "Made for the UAE", d: "Arabic-first RTL, WhatsApp-native and built with local payment gateways and PDPL-aware data handling." },
       { t: "Design obsessed", d: "Minimal, fast and accessible interfaces in the spirit of Apple's Human Interface Guidelines." },
@@ -155,10 +157,12 @@ const ar: Dict = {
   productsSection: {
     eyebrow: "منتجاتنا",
     title: "منتجات تعمل بينما أنت نائم.",
-    lead: "خمس منصات SaaS طوّرناها داخلياً واختبرناها مع شركات إماراتية، من وكلاء ذكاء اصطناعي يبيعون عبر واتساب إلى إكراميات تتم في ثوانٍ.",
+    lead: "ست منصات SaaS طوّرناها داخلياً للشركات والمبدعين في الإمارات، من وكلاء ذكاء اصطناعي يبيعون عبر واتساب إلى إكراميات تتم في ثوانٍ.",
     viewAll: "عرض جميع المنتجات",
     learnMore: "اعرف المزيد",
     visit: "زيارة الموقع",
+    soon: "قريباً",
+    waitlist: "انضم إلى قائمة الانتظار",
   },
   servicesSection: {
     eyebrow: "ماذا نقدّم",
@@ -167,7 +171,7 @@ const ar: Dict = {
     viewAll: "جميع الخدمات",
   },
   stats: [
-    { value: 5, suffix: "", label: "منتجات SaaS مطوّرة داخلياً" },
+    { value: 6, suffix: "", label: "منتجات SaaS مطوّرة داخلياً" },
     { value: 7, suffix: "", label: "خدمات رقمية أساسية" },
     { value: 24, suffix: "/7", label: "وكلاء ذكاء اصطناعي في الخدمة" },
     { value: 2, suffix: "", label: "لغتان: العربية والإنجليزية" },
@@ -186,7 +190,7 @@ const ar: Dict = {
     eyebrow: "لماذا نكسوفتشر",
     title: "نحن صنّاع منتجات، لا مجرد وكالة خدمات.",
     items: [
-      { t: "نشغّل منتجاتنا الخاصة", d: "نبني ونشغّل خمس منصات، لذا نصمم لمستخدمين حقيقيين ونمو حقيقي وإيرادات حقيقية." },
+      { t: "نشغّل منتجاتنا الخاصة", d: "نبني ست منصات خاصة بنا، لذا نصمم لمستخدمين حقيقيين ونمو حقيقي وإيرادات حقيقية." },
       { t: "الذكاء الاصطناعي في الجوهر", d: "النماذج اللغوية والصوت الذكي والأتمتة جزء من كل مشروع، وليست إضافة في النهاية." },
       { t: "مصمم للإمارات", d: "دعم كامل للعربية وواتساب وبوابات الدفع المحلية، مع معالجة بيانات متوافقة مع قانون حماية البيانات." },
       { t: "شغف بالتصميم", d: "واجهات بسيطة وسريعة وسهلة الوصول بروح إرشادات Apple للتصميم." },

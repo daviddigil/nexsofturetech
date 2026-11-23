@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { ProductVisual } from "@/components/ProductVisual";
 import { Reveal } from "@/components/Reveal";
+import { SoonBadge } from "@/components/SoonBadge";
 import { Faq } from "@/components/sections/Faq";
 import { CtaBand } from "@/components/sections/CtaBand";
 
@@ -56,7 +57,8 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
         lead={p.summary[lang]}
       >
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href={href(lang, "/contact")} className="btn-volt">{d.common.getQuote}</Link>
+          {p.status === "soon" && <SoonBadge label={d.productsSection.soon} className="self-center" />}
+          <Link href={href(lang, "/contact")} className="btn-volt">{p.status === "soon" ? d.productsSection.waitlist : d.common.getQuote}</Link>
           {p.url && (
             <a href={p.url} target="_blank" rel="noopener" className="btn-ghost text-white">
               {d.productsSection.visit} <ArrowUpRight className="flip-rtl h-4 w-4" aria-hidden />

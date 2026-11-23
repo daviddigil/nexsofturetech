@@ -23,7 +23,7 @@ const c = {
     vision: "Vision",
     visionBody: "To be the UAE's most trusted home-grown AI product company, exporting technology built in the Emirates to the world.",
     founder: "Founder",
-    founderBody: "David Digil founded Nexsofture Tech to combine product thinking with hands-on engineering. Under his leadership the company builds and runs its own platforms, including ChatCart Pro, ChatCart CRM, Quick Print UAE, Blackboard AI and TapyTips, while delivering projects for clients.",
+    founderBody: "David Digil founded Nexsofture Tech to combine product thinking with hands-on engineering. Under his leadership the company builds and runs its own platforms, including ChatCart Pro, ChatCart CRM, Quick Print UAE, Blackboard AI, TapyTips and the upcoming Chatree, while delivering projects for clients.",
     values: ["Customer obsessed", "Design is how it works", "Ship fast, learn faster", "AI with responsibility", "Built in the UAE, for the world"],
   },
   ar: {
@@ -36,7 +36,7 @@ const c = {
     vision: "الرؤية",
     visionBody: "أن نكون شركة منتجات الذكاء الاصطناعي المحلية الأكثر ثقة في الإمارات، ونصدّر تقنية صُنعت في الإمارات إلى العالم.",
     founder: "المؤسس",
-    founderBody: "أسس ديفيد ديجيل نكسوفتشر تك ليجمع بين التفكير في المنتجات والهندسة العملية. تحت قيادته تبني الشركة منصاتها الخاصة وتشغّلها، ومنها تشات كارت برو وتشات كارت CRM وكويك برنت الإمارات وبلاك بورد AI وتابي تيبس، إلى جانب تنفيذ مشاريع العملاء.",
+    founderBody: "أسس ديفيد ديجيل نكسوفتشر تك ليجمع بين التفكير في المنتجات والهندسة العملية. تحت قيادته تبني الشركة منصاتها الخاصة وتشغّلها، ومنها تشات كارت برو وتشات كارت CRM وكويك برنت الإمارات وبلاك بورد AI وتابي تيبس وتشات تري القادم، إلى جانب تنفيذ مشاريع العملاء.",
     values: ["العميل أولاً", "التصميم هو طريقة العمل", "أطلق بسرعة وتعلّم أسرع", "ذكاء اصطناعي بمسؤولية", "صُنع في الإمارات للعالم"],
   },
 };

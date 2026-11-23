@@ -5,8 +5,8 @@ export const homeFaq: { q: L; a: L }[] = [
   {
     q: { en: "What does Nexsofture Tech do?", ar: "ماذا تقدم نكسوفتشر تك؟" },
     a: {
-      en: "Nexsofture Tech is a UAE technology company that builds AI-powered SaaS products (ChatCart Pro, ChatCart CRM, Quick Print UAE, Blackboard AI and TapyTips) and provides website development, app development, digital marketing, UI/UX design, branding, graphic design and tech courses.",
-      ar: "نكسوفتشر تك شركة تقنية إماراتية تبني منتجات SaaS مدعومة بالذكاء الاصطناعي (تشات كارت برو، تشات كارت CRM، كويك برنت الإمارات، بلاك بورد AI، تابي تيبس) وتقدم تطوير المواقع والتطبيقات والتسويق الرقمي وتصميم الواجهات والهوية التجارية والتصميم الجرافيكي والدورات التقنية.",
+      en: "Nexsofture Tech is a UAE technology company that builds AI-powered SaaS products (ChatCart Pro, ChatCart CRM, Quick Print UAE, Blackboard AI, TapyTips and the upcoming Chatree) and provides website development, app development, digital marketing, UI/UX design, branding, graphic design and tech courses.",
+      ar: "نكسوفتشر تك شركة تقنية إماراتية تبني منتجات SaaS مدعومة بالذكاء الاصطناعي (تشات كارت برو، تشات كارت CRM، كويك برنت الإمارات، بلاك بورد AI، تابي تيبس، وتشات تري القادم) وتقدم تطوير المواقع والتطبيقات والتسويق الرقمي وتصميم الواجهات والهوية التجارية والتصميم الجرافيكي والدورات التقنية.",
     },
   },
   {
