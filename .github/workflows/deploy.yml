@@ -1,0 +1,45 @@
+# Builds the static site on GitHub and uploads out/ to Hostinger over FTP.
+# Needs repository secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+# (Settings → Secrets and variables → Actions). Optional variable: FTP_DIR.
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Check build output
+        run: |
+          test -f out/en/index.html
+          test -f out/.htaccess
+          test -f out/api/contact.php
+
+      - name: Upload to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ${{ vars.FTP_DIR || './' }}
+          exclude: |
+            **/.git*
+            **/.git*/**

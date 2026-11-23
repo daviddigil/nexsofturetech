@@ -2,6 +2,14 @@
 
 The site is a **static export**: plain HTML, CSS and JS plus one PHP file for the contact form. It runs on any Hostinger plan (Premium, Business or Cloud). No Node.js is needed on the server.
 
+## 0. Don't use Hostinger's "Node.js / Git build"
+Hostinger's build servers have an old system library, so Next.js 16 can't compile there ("GLIBC_2.29 not found"). This site is a static export anyway. Build it on your computer or on GitHub, then upload `out/`.
+
+**Automatic option:** `.github/workflows/deploy.yml` builds on every push to `main` and uploads `out/` over FTP.
+1. hPanel → Files → FTP Accounts → note the host, username and folder (your domain's `public_html`).
+2. GitHub repo → Settings → Secrets and variables → Actions → add secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`. If the FTP account's root isn't `public_html`, add a variable `FTP_DIR` (e.g. `./public_html/`).
+3. Push to `main`, or run the workflow from the Actions tab.
+
 ## 1. Build
 ```powershell
 npm install
